@@ -221,7 +221,21 @@ DESKTOP
   border-right: solid 12px #dfdfdf;
   border-left: solid 12px #dfdfdf;
   border-bottom: solid 36px #dfdfdf;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
+  margin-bottom: 60px;
+}
+
+.css-device--desktop::before {
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  right: 36px;
+  width: 12px;
+  height: 12px;
+  background-color: #cccccc;
+  border-radius: 12px;
+  box-shadow: 0 0 0 0 #cccccc, 16px 0 0 0 #cccccc, 32px 0 0 0 #33ff66;
+  content: "";
 }
 
 .css-device--desktop::after {
@@ -230,12 +244,12 @@ DESKTOP
   position: absolute;
   bottom: -96px;
   right: 35%;
-  padding: 0 12px;
+  padding: 0 5%;
   width: 30%;
   height: 60px;
   background-color: #cccccc;
   content: "";
-  border-bottom: solid 24px #dfdfdf;
+  border-bottom: solid 12px #dfdfdf;
   border-left: solid 8px transparent;
   border-right: solid 8px transparent;
   border-radius: 4px;
@@ -245,12 +259,20 @@ DESKTOP
 @media all and (min-width: 480px) {
   .css-device--desktop {
     border-bottom: solid 36px #dfdfdf;
+    margin-bottom: 120px;
+  }
+
+  .css-device--desktop::before {
+    bottom: -24px;
+    right: 56px;
+    box-shadow: 0 0 0 0 #cccccc, 24px 0 0 0 #cccccc, 48px 0 0 0 #33ff66;
   }
 
   .css-device--desktop::after {
+    border-bottom: solid 24px #dfdfdf;
+    padding: 0 10%;
     bottom: -156px;
     right: 35%;
-    padding: 0 24px;
     width: 30%;
     height: 120px;
   }

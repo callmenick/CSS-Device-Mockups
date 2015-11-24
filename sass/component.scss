@@ -270,6 +270,8 @@ DESKTOP
 // browser vars
 $desktop-frame-color: #dfdfdf;
 $desktop-stand-color: #cccccc;
+$desktop-button-color: #cccccc;
+$desktop-button-on-color: #33ff66;
 $desktop-breakpoint-small: 480px;
 $desktop-bezel-thickness: 12px;
 $desktop-frame-thickness: 36px;
@@ -284,20 +286,22 @@ $desktop-stand-height-lg: 120px;
   border-right: solid $desktop-bezel-thickness $desktop-frame-color;
   border-left: solid $desktop-bezel-thickness $desktop-frame-color;
   border-bottom: solid $desktop-frame-thickness $desktop-frame-color;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
+  margin-bottom: $desktop-stand-height;
 }
 
-//.css-device--desktop::before {
-//  display: block;
-//  position: absolute;
-//  top: -24px; left: 12px;
-//  width: 12px;
-//  height: 12px;
-//  background-color: $desktop-close-color;
-//  border-radius: 12px;
-//  box-shadow: 0 0 0 0 $desktop-close-color, 16px 0 0 0 $desktop-minimize-color, 32px 0 0 0 $desktop-expand-color;
-//  content: "";
-//}
+.css-device--desktop::before {
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  right: 36px;
+  width: 12px;
+  height: 12px;
+  background-color: $desktop-button-color;
+  border-radius: 12px;
+  box-shadow: 0 0 0 0 $desktop-button-color, 16px 0 0 0 $desktop-button-color, 32px 0 0 0 $desktop-button-on-color;
+  content: "";
+}
 
 .css-device--desktop::after {
   display: block;
@@ -305,12 +309,12 @@ $desktop-stand-height-lg: 120px;
   position: absolute;
   bottom: -$desktop-stand-height - $desktop-frame-thickness;
   right: 35%;
-  padding: 0 12px;
+  padding: 0 5%;
   width: 30%;
   height: $desktop-stand-height;
   background-color: $desktop-stand-color;
   content: "";
-  border-bottom: solid 24px $desktop-frame-color;
+  border-bottom: solid 12px $desktop-frame-color;
   border-left: solid 8px transparent;
   border-right: solid 8px transparent;
   border-radius: 4px;
@@ -321,17 +325,23 @@ $desktop-stand-height-lg: 120px;
 
   .css-device--desktop {
     border-bottom: solid $desktop-frame-thickness-lg $desktop-frame-color;
+    margin-bottom: $desktop-stand-height-lg;
   }
 
-  //.css-device--desktop::before {
-  //  top: -30px;
-  //  box-shadow: 0 0 0 0 $desktop-close-color, 24px 0 0 0 $desktop-minimize-color, 48px 0 0 0 $desktop-expand-color;
-  //}
+  .css-device--desktop::before {
+    bottom: -24px;
+    right: 56px;
+    box-shadow: 0 0 0 0 $desktop-button-color, 24px 0 0 0 $desktop-button-color, 48px 0 0 0 $desktop-button-on-color;
+  }
 
   .css-device--desktop::after {
+
+    border-bottom: solid 24px $desktop-frame-color;
+    padding: 0 10%;
+
     bottom: -$desktop-stand-height-lg - $desktop-frame-thickness-lg;
     right: 35%;
-    padding: 0 24px;
+
     width: 30%;
     height: $desktop-stand-height-lg;
   }
