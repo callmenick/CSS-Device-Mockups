@@ -1,7 +1,6 @@
 // =============================================================================
 // IMPORT VARIABLES
 // =============================================================================
-
 @import "config/variables";
 
 /* =============================================================================
@@ -45,7 +44,8 @@ $browser-breakpoint-small: 480px;
 .css-device--browser::before {
   display: block;
   position: absolute;
-  top: -24px; left: 12px;
+  top: -24px;
+  left: 12px;
   width: 12px;
   height: 12px;
   background-color: $browser-close-color;
@@ -58,7 +58,8 @@ $browser-breakpoint-small: 480px;
   display: block;
   overflow: hidden;
   position: absolute;
-  top: -27px; right: 12px;
+  top: -27px;
+  right: 12px;
   padding: 0 4px;
   width: 180px;
   height: 18px;
@@ -71,8 +72,8 @@ $browser-breakpoint-small: 480px;
   content: attr(data-url);
 }
 
-@media all and ( min-width: $browser-breakpoint-small ) {
-  
+@media all and (min-width: $browser-breakpoint-small) {
+
   .css-device--browser {
     border-top: solid 48px $browser-frame-color;
   }
@@ -83,7 +84,8 @@ $browser-breakpoint-small: 480px;
   }
 
   .css-device--browser::after {
-    top: -36px; right: 12px;
+    top: -36px;
+    right: 12px;
     padding: 0 8px;
     width: 240px;
     height: 24px;
@@ -145,8 +147,8 @@ $tablet-breakpoint-small: 720px;
   content: "";
 }
 
-@media all and ( min-width: $tablet-breakpoint-small ) {
-  
+@media all and (min-width: $tablet-breakpoint-small) {
+
   .css-device--tablet {
     width: $initial-tablet-width*1.5 + $initial-tablet-outline*1.5*2;
     border-top: solid $initial-tablet-top-bar*1.5 $tablet-frame-color;
@@ -163,7 +165,7 @@ $tablet-breakpoint-small: 720px;
     height: $initial-tablet-camera*1.5;
     border-radius: $initial-tablet-camera*1.5;
   }
-  
+
   .css-device--tablet::after {
     bottom: -$initial-tablet-button*1.5/2 - $initial-tablet-bottom-bar*1.5/2;
     margin-left: -$initial-tablet-button*1.5/2;
@@ -172,7 +174,7 @@ $tablet-breakpoint-small: 720px;
     border-radius: $initial-tablet-button*1.5/2;
     content: "";
   }
-  
+
 }
 
 /* =============================================================================
@@ -229,8 +231,8 @@ $mobile-breakpoint-small: 720px;
   content: "";
 }
 
-@media all and ( min-width: $mobile-breakpoint-small ) {
-  
+@media all and (min-width: $mobile-breakpoint-small) {
+
   .css-device--mobile {
     width: $initial-mobile-width*1.5 + $initial-mobile-outline*1.5*2;
     border-top: solid $initial-mobile-top-bar*1.5 $mobile-frame-color;
@@ -250,7 +252,7 @@ $mobile-breakpoint-small: 720px;
     border-radius: $initial-mobile-volume-width*1.5 0 0 $initial-mobile-volume-width*1.5;
     content: "";
   }
-  
+
   .css-device--mobile::after {
     bottom: -$initial-mobile-button*1.5/2 - $initial-mobile-bottom-bar*1.5/2;
     margin-left: -$initial-mobile-button*1.5/2;
@@ -259,5 +261,89 @@ $mobile-breakpoint-small: 720px;
     border-radius: $initial-mobile-button*1.5/2;
     content: "";
   }
-  
+}
+
+/* =============================================================================
+DESKTOP
+============================================================================= */
+
+// browser vars
+$desktop-frame-color: #dfdfdf;
+$desktop-stand-color: #cccccc;
+$desktop-button-color: #cccccc;
+$desktop-button-on-color: #33ff66;
+$desktop-breakpoint-small: 480px;
+$desktop-bezel-thickness: 12px;
+$desktop-frame-thickness: 36px;
+$desktop-frame-thickness-lg: 36px;
+$desktop-stand-height: 60px;
+$desktop-stand-height-lg: 120px;
+
+.css-device--desktop {
+  width: 100%;
+  /* max-width: 100%; set max width here if you need to. */
+  border-top: solid $desktop-bezel-thickness $desktop-frame-color;
+  border-right: solid $desktop-bezel-thickness $desktop-frame-color;
+  border-left: solid $desktop-bezel-thickness $desktop-frame-color;
+  border-bottom: solid $desktop-frame-thickness $desktop-frame-color;
+  border-radius: 4px;
+  margin-bottom: $desktop-stand-height;
+}
+
+.css-device--desktop::before {
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  right: 36px;
+  width: 12px;
+  height: 12px;
+  background-color: $desktop-button-color;
+  border-radius: 12px;
+  box-shadow: 0 0 0 0 $desktop-button-color, 16px 0 0 0 $desktop-button-color, 32px 0 0 0 $desktop-button-on-color;
+  content: "";
+}
+
+.css-device--desktop::after {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: -$desktop-stand-height - $desktop-frame-thickness;
+  right: 35%;
+  padding: 0 5%;
+  width: 30%;
+  height: $desktop-stand-height;
+  background-color: $desktop-stand-color;
+  content: "";
+  border-bottom: solid 12px $desktop-frame-color;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  border-radius: 4px;
+  background-clip: content-box;
+}
+
+@media all and (min-width: $desktop-breakpoint-small) {
+
+  .css-device--desktop {
+    border-bottom: solid $desktop-frame-thickness-lg $desktop-frame-color;
+    margin-bottom: $desktop-stand-height-lg;
+  }
+
+  .css-device--desktop::before {
+    bottom: -24px;
+    right: 56px;
+    box-shadow: 0 0 0 0 $desktop-button-color, 24px 0 0 0 $desktop-button-color, 48px 0 0 0 $desktop-button-on-color;
+  }
+
+  .css-device--desktop::after {
+
+    border-bottom: solid 24px $desktop-frame-color;
+    padding: 0 10%;
+
+    bottom: -$desktop-stand-height-lg - $desktop-frame-thickness-lg;
+    right: 35%;
+
+    width: 30%;
+    height: $desktop-stand-height-lg;
+  }
+
 }
