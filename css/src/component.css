@@ -211,3 +211,47 @@
     content: "";
   }
 }
+/* =============================================================================
+DESKTOP
+============================================================================= */
+.css-device--desktop {
+  width: 100%;
+  /* max-width: 100%; set max width here if you need to. */
+  border-top: solid 12px #dfdfdf;
+  border-right: solid 12px #dfdfdf;
+  border-left: solid 12px #dfdfdf;
+  border-bottom: solid 36px #dfdfdf;
+  border-radius: 4px 4px 0 0;
+}
+
+.css-device--desktop::after {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: -96px;
+  right: 35%;
+  padding: 0 12px;
+  width: 30%;
+  height: 60px;
+  background-color: #cccccc;
+  content: "";
+  border-bottom: solid 24px #dfdfdf;
+  border-left: solid 8px transparent;
+  border-right: solid 8px transparent;
+  border-radius: 4px;
+  background-clip: content-box;
+}
+
+@media all and (min-width: 480px) {
+  .css-device--desktop {
+    border-bottom: solid 36px #dfdfdf;
+  }
+
+  .css-device--desktop::after {
+    bottom: -156px;
+    right: 35%;
+    padding: 0 24px;
+    width: 30%;
+    height: 120px;
+  }
+}
